@@ -1,0 +1,207 @@
+/* --- GLOBAL STYLES --- */
+body {
+    font-family: 'Bangers', cursive; 
+    background: linear-gradient(to right, #a29bfe, #ffeaa7); 
+    color: #2d3436;
+    text-align: center;
+    padding: 20px;
+    overflow-x: hidden; 
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #ffffff;
+    border: 8px solid #fdcb6e; 
+    border-radius: 25px;
+    padding: 30px;
+    box-shadow: 15px 15px 0px #e17055; 
+    position: relative;
+    overflow: hidden; 
+}
+
+h1 {
+    font-family: 'Luckiest Guy', cursive; 
+    color: #d63031;
+    text-shadow: 3px 3px #ffeaa7;
+    margin-bottom: 40px;
+    font-size: 3em;
+}
+
+h2 {
+    font-family: 'Bangers', cursive;
+    color: #0984e3;
+    margin-top: 30px;
+    font-size: 2em;
+}
+
+/* KUNCI: Menyembunyikan elemen yang tidak aktif */
+.hidden {
+    display: none !important; 
+}
+
+/* KUNCI: Area karakter sebagai wadah untuk posisi absolut */
+.character-area {
+    position: relative; 
+    width: 100%;
+    height: 300px; 
+    display: flex;
+    justify-content: center; 
+    align-items: flex-end; 
+    margin-bottom: 20px;
+    overflow: hidden; 
+}
+
+/* Base style untuk semua gambar karakter */
+#girl-running, #bad-mood-bubble, #girl-after-attack, #rescuer-punch, #bad-mood-target, #bad-mood-burst {
+    position: absolute;
+    bottom: 0;
+    height: 250px; 
+    object-fit: contain;
+}
+
+/* --- ADEGAN AWAL (INITIAL SCENE) --- */
+#girl-running {
+    left: 20%;
+    transform: translateX(-50%);
+}
+
+#bad-mood-bubble {
+    right: -100px; 
+    animation: moveBadMood 5s linear forwards; 
+    height: 300px; 
+}
+
+/* --- ADEGAN PENYELAMATAN (RESCUE SCENE) --- */
+#girl-after-attack {
+    left: 15%;
+    transform: translateX(-50%);
+}
+
+#bad-mood-target {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 300px;
+}
+
+#rescuer-punch {
+    right: 20%;
+    opacity: 0;
+    right: -300px;
+}
+
+#bad-mood-burst {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px; 
+    height: 400px;
+    z-index: 10;
+}
+
+/* --- ADEGAN KEMENANGAN (GALERI TRANSISI EPIC) --- */
+.image-gallery {
+    position: relative;
+    width: 80%; 
+    height: 350px; 
+    margin: 30px auto;
+    overflow: hidden;
+    border: 8px solid #00b894;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.pose-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0; /* Awalnya semua tidak terlihat */
+    transition: opacity 1.0s ease-in-out; /* Transisi smooth 1 detik */
+}
+
+.pose-image.active {
+    opacity: 1; /* Hanya gambar aktif yang terlihat */
+}
+
+/* --- TOMBOL & CAPTION --- */
+.caption, .caption-rescuer, .caption-victory, .caption-failure {
+    font-family: 'Comic Sans MS', cursive;
+    font-style: italic;
+    font-size: 1.2em;
+    padding: 10px;
+    background: #dfe6e9;
+    border-radius: 10px;
+    margin-top: 20px;
+    line-height: 1.5;
+}
+
+#rescue-button {
+    background-color: #ff7675;
+    color: white;
+    padding: 18px 35px;
+    font-size: 1.8em;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 30px;
+    box-shadow: 0 8px #d63031;
+    transition: all 0.2s;
+    text-transform: uppercase;
+}
+#rescue-button:active {
+    box-shadow: 0 3px #d63031;
+    transform: translateY(5px);
+}
+
+#final-button {
+    background-color: #00b894;
+    color: white;
+    padding: 15px 25px;
+    font-size: 1.5em;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    margin-top: 20px;
+    box-shadow: 0 5px #00a887;
+    transition: all 0.1s;
+}
+
+/* ... (Gaya Retry Button dan Failure Scene tetap sama) ... */
+
+/* --- ANIMASI KEYFRAMES --- */
+@keyframes moveBadMood {
+    0% { right: -100px; transform: scale(0.8); opacity: 0; }
+    100% { right: 30%; transform: scale(1); opacity: 1; }
+}
+
+@keyframes rescuerEnterPunch {
+    0% { right: -300px; opacity: 0; }
+    100% { right: 20%; opacity: 1; transform: translateX(50%) scaleX(-1); }
+}
+
+@keyframes burstEffect {
+    0% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+    50% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(1.5); opacity: 0; }
+}
+
+/* KUNCI: Animasi untuk Bad Mood yang Ditangkis (Shaking Effect) */
+@keyframes shakeAttack {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    10% { transform: translate(-45%, -55%) rotate(-5deg); }
+    20% { transform: translate(-55%, -45%) rotate(5deg); }
+    30% { transform: translate(-45%, -55%) rotate(-5deg); }
+    40% { transform: translate(-55%, -45%) rotate(5deg); }
+    50% { transform: translate(-45%, -55%) rotate(-5deg); }
+    60% { transform: translate(-55%, -45%) rotate(5deg); }
+    70% { transform: translate(-45%, -55%) rotate(-5deg); }
+    80% { transform: translate(-55%, -45%) rotate(5deg); }
+    100% { transform: translate(-50%, -50%) rotate(0deg); }
+}

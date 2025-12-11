@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penghancur Bad Mood - The Epic Rescue (Final Version) 🦸</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Luckiest+Guy&family=Comic+Sans+MS&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <h1>MISI MENGHEMPAS BADMOOD SYAKIRA 😤✨</h1>
+
+        <div class="scene initial-scene" id="initialScene">
+            <h2>KAMU DISERANG BADMOOD, SEGERA PANGGIL AKU SENGGG</h2>
+            <div class="character-area">
+                <img id="girl-running" src="takut.jpg" alt="Cewek lari dari bad mood">
+                <img id="bad-mood-bubble" src="badmood.png" alt="Bubble Bad Mood Mengejar">
+            </div>
+            <p class="caption">"Aduh! Atuu mayess Bad Mood-nya ngejar-ngejar!"</p>
+            <button id="rescue-button">😭 TOLONG AKU MAS SAYANG! 😭</button>
+        </div>
+
+        <div class="scene rescue-scene hidden" id="rescueScene">
+            <h2>Badmoodnya sedang aku tangkis sayang, tenang ajaa</h2>
+            <div class="character-area">
+                <img id="girl-after-attack" src="aman.jpg" alt="Cewek sudah aman">
+                <img id="rescuer-punch" src="badmood.png" alt="Cowok menghajar bad mood" class="hidden">
+                <img id="bad-mood-target" src="tangkis-removebg-preview.png" alt="Bad Mood ditangkis" class="hidden"> 
+                <img id="bad-mood-burst" src="tangkis-removebg-preview.png" alt="Bad Mood meledak" class="hidden">
+            </div>
+            <p class="caption-rescuer">BADABIM BAM BUM, ENYAHH KALIAN BADMOODD</p>
+        </div>
+
+        <div class="scene victory-scene hidden" id="victoryScene">
+            <h2>DON'T U EVER THINK THAT U CAN TOUCH MY FINESHYIITT</h2>
+            
+            <div class="image-gallery" id="coolPosesGallery">
+                <img class="pose-image active" src="suuttt.jpg" alt="Gaya Keren 1">
+                <img class="pose-image" src="suuttt.jpg" alt="Gaya Keren 2">
+                <img class="pose-image" src="suuttt.jpg" alt="Gaya Keren 3">
+            </div>
+
+            <p class="caption-victory">HOHOHOHO MWAHH MWAHHHH"</p>
+            <button id="final-button" class="hidden">Mas Sayang Keren! (Selesai)</button>
+        </div>
+        
+        <div class="scene failure-scene hidden" id="failureScene">
+            <h2>😭 MISI GAGAL! BAD MOOD MENGUASAI! 💔</h2>
+            <div class="character-area-failure">
+                <img id="girl-failure" src="foto-cewe-badmood-parah.png" alt="Cewek dikerubungi bad mood dan lemas">
+            </div>
+            <p class="caption-failure">"Maafkan Mas, Dek... Terlambat. Bad Mood-nya terlanjur merajalela... *Krik-krik-krik*"</p>
+            <button id="retry-button">Coba Lagi! (Jangan Lambat, Mas!)</button>
+        </div>
+
+        <audio id="background-music" src="AEAO - Dynamicduo#song#shorts#kpop#trending#youtubeshorts#viral#shortvideo#trend#reels#new#ytshorts.mp3" preload="auto"></audio>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
